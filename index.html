@@ -34,4 +34,61 @@
     button {
       font-size: 20px;
       padding: 10px 25px;
-      cur
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      border: none;
+    }
+
+    #yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #no {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="coeur.png" width="200">
+
+  <h1>Veux-tu être ma Valentine ? 💖</h1>
+
+  <div class="buttons">
+    <button id="yes" onclick="yesClick()">Oui</button>
+    <button id="no" onclick="noClick()">Non</button>
+  </div>
+
+  <script>
+    let yesSize = 20;
+    let noSize = 20;
+    let clicks = 0;
+
+    function noClick() {
+      clicks++;
+
+      yesSize += 8;
+      noSize -= 3;
+
+      document.getElementById("yes").style.fontSize = yesSize + "px";
+      document.getElementById("no").style.fontSize = noSize + "px";
+
+      if (noSize <= 5 || clicks >= 8) {
+        document.getElementById("no").style.display = "none";
+      }
+    }
+
+    function yesClick() {
+      document.body.innerHTML = `
+        <h1>Youpi !!! 🎉🎆</h1>
+        <img src="feux.gif" width="300">
+      `;
+    }
+  </script>
+
+</body>
+</html>
