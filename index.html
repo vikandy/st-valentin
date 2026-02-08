@@ -1,0 +1,26 @@
+<body>
+
+  <img src="coeur.png" width="200">
+
+  <h1>Veux-tu être ma Valentine ? 💖</h1>
+
+  <button id="yes" onclick="yesClick()">Oui</button>
+  <button id="no" onclick="noClick()">Non</button>
+
+  <script>
+    let size = 20;
+
+    function noClick() {
+      size += 10;
+      document.getElementById("yes").style.fontSize = size + "px";
+    }
+
+    function yesClick() {
+      document.body.innerHTML = `
+        <h1>Youpi !!! 🎉🎆</h1>
+        <img src="feux.gif" width="300">
+      `;
+    }
+  </script>
+
+</body>
